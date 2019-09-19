@@ -47,7 +47,7 @@ $("#add-train").on("click",function(event){
     })
 
 //alerting when a train is added on the submit
-alert("Train added....!");
+alert("New Train has been added!");
 
 //clearing my fills
 $("#formGroupExampleInput") .val("");
@@ -87,7 +87,7 @@ var tFirstTrain = snapshot.val().dbfirstTrain;
     // // Next Train
      var nextTrain = moment().add(tMinutesTillTrain, "minutes");
      console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm A"));
-
+     /// i know i am suppose use the unix comverted with paresea
 
 //making the table
 var tr = $("<tr>")
@@ -99,10 +99,10 @@ tr.append("<td>"+ tFrequency + "</td>"),
 
 
 
-tr.append("<td>"+ nextTrain +"</td>"),
+tr.append("<td>"+ nextTrain + "</td>"),
 
 
-tr.append("<td>" + tMinutesTillTrain + "</td>"),
+tr.append("<td>" + tMinutesTillTrain + " " + "minutes" +"</td>"),
 
 
 $("tbody").append(tr)
