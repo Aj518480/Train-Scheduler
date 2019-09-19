@@ -70,8 +70,6 @@ var tFirstTrain = snapshot.val().dbfirstTrain;
 //Next arrival time and Minures away with Calculation
      var firstTimeConverted = moment(tFirstTrain, "HH:mm").subtract(1, "years");
     console.log(firstTimeConverted);
-
-
     // // Difference between the times
      var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
     console.log("DIFFERENCE IN TIME: " + diffTime);
@@ -87,24 +85,17 @@ var tFirstTrain = snapshot.val().dbfirstTrain;
     // // Next Train
      var nextTrain = moment().add(tMinutesTillTrain, "minutes");
      console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm A"));
-     /// i know i am suppose use the unix comverted with paresea
-
+     
 //making the table
 var tr = $("<tr>")
 //displays what is inside table
 tr.append("<td>"+ tName + "</td>"),
 tr.append("<td>"+ tDestination + "</td>"),
-
 tr.append("<td>"+ tFrequency + "</td>"),
 
-
-
+/// I know I am suppose use the unix converted but it kept breaking all the code
 tr.append("<td>"+ nextTrain + "</td>"),
-
-
 tr.append("<td>" + tMinutesTillTrain + " " + "minutes" +"</td>"),
-
-
 $("tbody").append(tr)
 });
 
