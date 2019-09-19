@@ -85,6 +85,9 @@ var tFirstTrain = snapshot.val().dbfirstTrain;
     // // Next Train
      var nextTrain = moment().add(tMinutesTillTrain, "minutes");
      console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm A"));
+
+     // To calculate the arrival time, add the tMinutestillTrain to the currrent time
+    var tArrival = moment().add(tMinutesTillTrain, "m").format("hh:mm A");
      
 //making the table
 var tr = $("<tr>")
@@ -92,9 +95,7 @@ var tr = $("<tr>")
 tr.append("<td>"+ tName + "</td>"),
 tr.append("<td>"+ tDestination + "</td>"),
 tr.append("<td>"+ tFrequency + "</td>"),
-
-/// I know I am suppose use the unix converted but it kept breaking all the code
-tr.append("<td>"+ nextTrain + "</td>"),
+tr.append("<td>"+ tArrival + "</td>"),
 tr.append("<td>" + tMinutesTillTrain + " " + "minutes" +"</td>"),
 $("tbody").append(tr)
 });
